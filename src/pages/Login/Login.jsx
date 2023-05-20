@@ -3,6 +3,7 @@ import { useContext, useRef, useState } from "react";
 import { FaFacebook, FaGoogle, FaLinkedin } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
+import GoogleLog from "../shareComponent/GoogleLog";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -34,68 +35,50 @@ const Login = () => {
   return (
     <div className="max-w-md h-[80vh] my-10 mx-auto relative">
       <div className="w-80 h-80 bg-[#A427DF] absolute rounded-full blur-2xl opacity-80 "></div>
-        <div className="login-card">
-          <h1 className="text-3xl text-center font-bold">Login!</h1>
-          <form onSubmit={submitHandler}>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Email</span>
-              </label>
-              <input
-                type="text"
-                placeholder="email"
-                ref={emailRaf}
-                className="input input-bordered"
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </div>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Password</span>
-              </label>
-              <input
-                type="text"
-                placeholder="password"
-                className="input input-bordered"
-                onChange={(e) => setPassword(e.target.value)}
-              />
-              <label className="label">
-                <p
-                  onClick={forgotPass}
-                  className="label-text-alt link link-hover"
-                >
-                  Forgot password?
-                </p>
-              </label>
-            </div>
-            <div className="form-control mt-6">
-              <button type="submit" className="btn btn-primary">
-                Login
-              </button>
-            </div>
-          </form>
-          <div className="divider">OR</div>
-          <p className="flex justify-center gap-x-3">
-            <span
-              onClick={googleLog}
-              className="bg-gray-200 p-3 rounded-full cursor-pointer"
-            >
-              <FaGoogle />
-            </span>
-            <span className="bg-gray-200 p-3 rounded-full cursor-pointer">
-              <FaFacebook />
-            </span>
-            <span className="bg-gray-200 p-3 rounded-full cursor-pointer">
-              <FaLinkedin />
-            </span>
-          </p>
-          <p className="text-center">
-            New in this site ?{" "}
-            <Link className="text-orange-600 font-semibold" to="/registration">
-              Registration
-            </Link>
-          </p>
-        </div>
+      <div className="login-card">
+        <h1 className="text-3xl text-center font-bold">Login!</h1>
+        <form onSubmit={submitHandler}>
+          <div className="form-control">
+            <label className="toy-label">Email</label>
+            <input
+              type="text"
+              placeholder="email"
+              ref={emailRaf}
+              className="toy-input"
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+          <div className="form-control">
+            <label className="toy-label ">Password</label>
+            <input
+              type="text"
+              placeholder="password"
+              className="toy-input"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <label className="toy-label">
+              <p
+                onClick={forgotPass}
+                className="text-white tracking-wide cursor-pointer mt-2"
+              >
+                Forgot password?
+              </p>
+            </label>
+          </div>
+          <div className="form-control ">
+            <button type="submit" className="btn btn-primary">
+              Login
+            </button>
+          </div>
+        </form>
+        <GoogleLog />
+        <p className="text-center">
+          New in this site ?{" "}
+          <Link className="text-orange-600 font-semibold" to="/registration">
+            Registration
+          </Link>
+        </p>
+      </div>
     </div>
   );
 };

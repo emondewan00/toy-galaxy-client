@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { FaGoogle, FaFacebook, FaLinkedin } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
+import GoogleLog from "../shareComponent/GoogleLog";
 
 const Registration = () => {
   const [name, setName] = useState("");
@@ -19,7 +20,6 @@ const Registration = () => {
     <div className="max-w-lg h-[80vh] my-10 mx-auto relative">
       <div className="login-card">
         <h1 className="text-3xl text-center font-bold ">Sing Up!</h1>
-
         <form onSubmit={submitHandler} className="space-y-3">
           <div className="form-control ">
             <label className="toy-label" htmlFor="name">
@@ -76,20 +76,9 @@ const Registration = () => {
             </button>
           </div>
         </form>
-        <div className="divider after:bg-blue-600 before:bg-blue-600">OR</div>
-        <p className="flex justify-center gap-x-3">
-          <span className="bg-white/10 p-3 rounded-full cursor-pointer">
-            <FaGoogle />
-          </span>
-          <span className="bg-white/10 p-3 rounded-full cursor-pointer">
-            <FaFacebook />
-          </span>
-          <span className="bg-white/10 p-3 rounded-full cursor-pointer">
-            <FaLinkedin />
-          </span>
-        </p>
+        <GoogleLog />
         <p className="text-center">
-          Already have an account?{" "}
+          Already have an account?
           <Link className="text-orange-600 font-semibold" to="/login">
             Login
           </Link>
