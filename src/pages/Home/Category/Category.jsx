@@ -76,7 +76,7 @@ const Category = () => {
           </div>
           <div className="card-actions justify-between items-center">
             <p>5 ratings</p>
-            <Link to="/details/1" className="btn btn-primary">Details</Link>
+            <Link to="/details/1" className="px-4 py-2 rounded-sm text-white hover:bg-[#ff4b0f] bg-[#ff630f] outline-none">Details</Link>
           </div>
         </div>
       </div>

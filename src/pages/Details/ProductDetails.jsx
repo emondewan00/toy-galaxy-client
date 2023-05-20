@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { BsFillBookmarkHeartFill } from "react-icons/bs";
+import { BsFillBookmarkHeartFill, BsFillCartPlusFill } from "react-icons/bs";
 import img from "../../assets/spider-man.jpg";
 
 const ProductDetails = () => {
@@ -16,7 +16,7 @@ const ProductDetails = () => {
         </figure>
         <div className=" w-4/5 mx-auto py-5  space-y-3">
           <h2 className="text-3xl font-semibold ">New album is released!</h2>
-          <p className="text-lg text-yellow-500 font-semibold">
+          <p className="text-lg text-[#ff630f] font-semibold">
             $100.00 - <span className="line-through ">$50</span>
           </p>
           <p>ratings</p>
@@ -32,7 +32,10 @@ const ProductDetails = () => {
               {" "}
               <BsFillBookmarkHeartFill className="inline" /> Add to wishlist
             </button>
-            <button className=" px-4 py-2 rounded-sm text-white hover:bg-[#ff4b0f] bg-[#ff630f] outline-none">Add to Cart</button>
+            <button className=" px-4 py-2 rounded-sm text-white hover:bg-[#ff4b0f] bg-[#ff630f] outline-none">
+              {" "}
+              <BsFillCartPlusFill  className="inline"/> Add to Cart
+            </button>
           </div>
           <h1 className="text-xl">product details</h1>
           <ul className="list-disc grid grid-cols-1 md:grid-cols-2">
@@ -44,7 +47,7 @@ const ProductDetails = () => {
           <p>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est ad
             inventore corporis at maxime ipsam similique aliquam, tempora omnis
-            hic in dolorem numquam rem modi architecto 
+            hic in dolorem numquam rem modi architecto
           </p>
         </div>
       </div>

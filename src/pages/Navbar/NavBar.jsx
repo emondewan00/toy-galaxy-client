@@ -15,7 +15,7 @@ const NavBar = () => {
   // };
   // Home, All Toys, My Toys, Add A Toy, Blogs,
   return (
-    <div className="  text-white bg-blue-800/30 backdrop-blur border-b  shadow-xl">
+    <div className="  text-white bg-white/10  border-b  shadow-xl">
       <nav className="p-5  md:flex md:items-center md:justify-between">
         <div className="flex justify-between items-center ">
           <Link
