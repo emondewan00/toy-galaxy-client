@@ -2,9 +2,10 @@ import React from "react";
 
 const AddToy = () => {
   return (
-    <div className="w-5/6 bg-white/5 rounded-tr-[200px] rounded-tl-3xl rounded-br-2xl rounded-bl-[200px] m-auto h-[90vh]  my-10 outline text-white ">
+    <div className="w-5/6 bg-white/5 md:rounded-tr-[200px] md:rounded-tl-3xl md:rounded-br-2xl md:rounded-bl-[200px] m-auto md:h-[92vh]  my-10 p-3 md:p-0 outline text-white ">
       <div className="relative">
         <div className="w-80 h-80 bg-[#A427DF] absolute rounded-full blur-2xl opacity-20 "></div>
+        <div className="w-80 h-80 bottom-0 right-0 bg-[#ff630f] absolute rounded-full blur-2xl opacity-40 "></div>
         <div className="relative z-10">
           <h1 className="text-7xl text-center py-4">Add New Toy </h1>
           

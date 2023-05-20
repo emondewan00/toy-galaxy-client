@@ -6,6 +6,7 @@ import Home from "../pages/Home/Home/Home";
 import ProductDetails from "../pages/Details/ProductDetails";
 import AllToys from "../pages/all-toys/AllToys";
 import AddToy from "../pages/AddToy/AddToy";
+import MyToys from "../pages/myToys/MyToys";
 
 const routes = createBrowserRouter([
   {
@@ -18,6 +19,7 @@ const routes = createBrowserRouter([
       { path: "/details/:id", element: <ProductDetails /> },
       { path: "/allToys", element: <AllToys /> },
       { path: "/addToy", element: <AddToy /> },
+      { path: "/myToys", element: <MyToys /> },
     ],
   },
 ]);
