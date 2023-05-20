@@ -10,14 +10,14 @@ const ProductDetails = () => {
       <h1 className="text-4xl font-semibold text-center my-4 tracking-wide">
         Product Details
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 bg-base-100 shadow-xl md:max-w-5xl mx-auto rounded">
+      <div className="grid grid-cols-1 md:grid-cols-2  bg-white/10 shadow-xl md:max-w-5xl mx-auto rounded">
         <figure>
           <img src={img} alt="Album" className="w-[500px]" />
         </figure>
-        <div className=" w-4/5 mx-auto py-5 text-black space-y-3">
+        <div className=" w-4/5 mx-auto py-5  space-y-3">
           <h2 className="text-3xl font-semibold ">New album is released!</h2>
           <p className="text-lg text-yellow-500 font-semibold">
-            $100.00 - <span className="line-through text-black">$50</span>
+            $100.00 - <span className="line-through ">$50</span>
           </p>
           <p>ratings</p>
           <input
@@ -25,7 +25,7 @@ const ProductDetails = () => {
             name=""
             id=""
             defaultValue="1"
-            className=" w-14  outline-none bg-gray-300 rounded-sm pl-2 "
+            className=" w-20  outline-none bg-white/5 border-2  rounded-sm pl-2 "
           />
           <div className="card-actions items-center gap-x-5">
             <button className="">
