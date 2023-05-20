@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { HiMenu } from "react-icons/hi";
 import { AuthContext } from "../../Provider/AuthProvider";
 
-
 const NavBar = () => {
   const [nav, setNav] = useState(false);
   const { currentUser, logOut } = useContext(AuthContext);
@@ -15,7 +14,7 @@ const NavBar = () => {
   };
   return (
     <div className="  text-white md:bg-white/10 bg-primary md:border-b  shadow-xl">
-      <nav className="p-5  md:flex md:items-center md:justify-between">
+      <nav className="p-5 container mx-auto md:flex md:items-center md:justify-between">
         <div className="flex justify-between items-center ">
           <Link
             to="/"
@@ -28,7 +27,7 @@ const NavBar = () => {
             className="text-3xl cursor-pointer mx-2 md:hidden block"
             onClick={menuHandler}
           >
-            <HiMenu/>
+            <HiMenu />
           </span>
         </div>
         <ul
@@ -52,18 +51,31 @@ const NavBar = () => {
             <Link to="/blogs">Blogs</Link>
           </li>
           {currentUser?.email ? (
-          <>
-            <li className="me-2">
-              <button onClick={logOutHandler} className="">
-                Logout
-              </button>
+            <>
+              <li className="me-2">
+                <div className="avatar">
+                  <div className="w-8 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                    <img
+                      src="/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                      title={currentUser.displayName}
+                    />
+                  </div>
+                </div>
+              </li>
+              <li className="me-2">
+                <button
+                  onClick={logOutHandler}
+                  className="my-btn"
+                >
+                  Logout
+                </button>
+              </li>
+            </>
+          ) : (
+            <li className="me-2 my-btn">
+              <Link to="/login" >Login</Link>
             </li>
-          </>
-        ) : (
-          <li className="me-2">
-            <Link to="/login">Login</Link>
-          </li>
-        )}
+          )}
         </ul>
       </nav>
     </div>

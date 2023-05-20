@@ -2,6 +2,7 @@ import React from "react";
 import img from "../../../assets/cover-img.jpg";
 import Category from "../Category/Category";
 import ImgGallery from "../imgGallery/ImgGallery";
+import Toast from "../../toast/Toast";
 
 const Home = () => {
   return (
@@ -13,7 +14,7 @@ const Home = () => {
             <h1 className="text-7xl ">
               It Help To Brain Growth For Your Childerns
             </h1>
-            <form className="relative mt-4">
+            {/* <form className="relative mt-4">
               <input
                 type="search"
                 placeholder="Search Toys"
@@ -24,7 +25,7 @@ const Home = () => {
                 value="Search "
                 className="absolute left-52 text-white btn btn-success"
               />
-            </form>
+            </form> */}
           </div>
         </div>
         <div>

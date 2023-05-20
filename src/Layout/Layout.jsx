@@ -3,14 +3,16 @@ import NavBar from "../pages/Navbar/NavBar";
 import Footer from "../pages/Footer/Footer";
 
 const Layout = () => {
-  // bg-[#01051e] 
+  // bg-[#01051e]
   return (
-    <div className="container bg-[#01051e]  mx-auto ">
-      <NavBar />
-      <div className="min-h-[80vh] ">
-        <Outlet />
+    <div className=" bg-[#01051e]   ">
+      <div className="">
+        <NavBar />
+        <div className="min-h-[80vh] container mx-auto">
+          <Outlet />
+        </div>
+        <Footer />
       </div>
-      <Footer />
     </div>
   );
 };

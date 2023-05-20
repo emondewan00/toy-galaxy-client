@@ -12,4 +12,7 @@
   .login-card {
     @apply card-body relative z-10 backdrop-blur-2xl bg-white/10 rounded  text-white;
   }
+  .my-btn {
+    @apply px-4 py-2 rounded-sm text-white hover:bg-[#ff4b0f] bg-[#ff630f] outline-none;
+  }
 }

@@ -32,7 +32,7 @@ const ProductDetails = () => {
               {" "}
               <BsFillBookmarkHeartFill className="inline" /> Add to wishlist
             </button>
-            <button className=" px-4 py-2 rounded-sm text-white hover:bg-[#ff4b0f] bg-[#ff630f] outline-none">
+            <button className="my-btn">
               {" "}
               <BsFillCartPlusFill  className="inline"/> Add to Cart
             </button>

@@ -25,16 +25,10 @@ const Login = () => {
   const forgotPass = (e) => {
     console.log(emailRaf.current.value);
   };
-  const googleLog = () => {
-    googleLogIn()
-      .then((res) => {
-        navigate(from);
-      })
-      .catch((err) => console.log(err));
-  };
+  
   return (
-    <div className="max-w-md h-[80vh] my-10 mx-auto relative">
-      <div className="w-80 h-80 bg-[#A427DF] absolute rounded-full blur-2xl opacity-80 "></div>
+    <div className="max-w-md h-[80vh] my-10 mx-auto  relative">
+      <div className="w-80 h-80 bg-[#A427DF] absolute rounded-full -top-10 -left-10 "></div>
       <div className="login-card">
         <h1 className="text-3xl text-center font-bold">Login!</h1>
         <form onSubmit={submitHandler}>
