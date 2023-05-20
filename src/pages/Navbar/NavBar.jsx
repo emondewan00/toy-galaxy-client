@@ -15,7 +15,7 @@ const NavBar = () => {
   // };
   // Home, All Toys, My Toys, Add A Toy, Blogs,
   return (
-    <div className="   shadow">
+    <div className="  text-white bg-blue-800/30 backdrop-blur border-b  shadow-xl">
       <nav className="p-5  md:flex md:items-center md:justify-between">
         <div className="flex justify-between items-center ">
           <Link
@@ -33,7 +33,7 @@ const NavBar = () => {
           </span>
         </div>
         <ul
-          className={`md:flex md:items-center z-40 md:z-auto absolute md:sticky  w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100   transition-all ease-in duration-500 ${
+          className={`md:flex md:items-center z-40 md:z-auto absolute md:sticky  w-full left-0  md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100   transition-all ease-in duration-500 ${
             nav ? "top-[80px]" : "top-[-400px]"
           }`}
         >
