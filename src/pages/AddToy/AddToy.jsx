@@ -2,7 +2,7 @@ import React from "react";
 
 const AddToy = () => {
   return (
-    <div className="w-5/6 bg-white/5 rounded-tr-[200px] rounded-tl-3xl rounded-br-2xl rounded-bl-[200px] m-auto h-[80vh] my-10 outline text-white ">
+    <div className="w-5/6 bg-white/5 rounded-tr-[200px] rounded-tl-3xl rounded-br-2xl rounded-bl-[200px] m-auto h-[90vh]  my-10 outline text-white ">
       <div className="relative">
         <div className="w-80 h-80 bg-[#A427DF] absolute rounded-full blur-2xl opacity-20 "></div>
         <div className="relative z-10">
@@ -12,13 +12,13 @@ const AddToy = () => {
             <div className="flex flex-wrap -mx-3 mb-6">
               <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                 <label
-                  className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                  className="toy-label"
                   htmlFor="name"
                 >
-                  Name
+                  Toy Name
                 </label>
                 <input
-                  className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                  className="toy-input"
                   id="name"
                   type="text"
                   placeholder="Enter toy name"
@@ -27,104 +27,124 @@ const AddToy = () => {
               </div>
               <div className="w-full md:w-1/2 px-3">
                 <label
-                  className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                  htmlFor="Chef"
+                  className="toy-label"
+                  htmlFor="seller"
                 >
-                  Chef
+                  seller
                 </label>
                 <input
-                  className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                  id="Chef"
+                  className="toy-input"
+                  id="seller"
                   type="text"
-                  placeholder="Enter coffee chef "
-                  name="chef"
+                  placeholder="Enter seller name"
+                  name="seller"
                 />
               </div>
             </div>
             <div className="flex flex-wrap -mx-3 mb-6">
               <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                 <label
-                  className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                  htmlFor="Supplier"
+                  className="toy-label"
+                  htmlFor="seller-email"
                 >
-                  Supplier
+                  seller-email
                 </label>
                 <input
-                  className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                  id="Supplier"
+                  className="toy-input"
+                  id="seller-email"
                   type="text"
-                  placeholder="Enter Supplier name"
-                  name="Supplier"
+                  placeholder="Enter seller email "
+                  name="seller-email"
                 />
               </div>
               <div className="w-full md:w-1/2 px-3">
                 <label
-                  className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                  htmlFor="Taste"
+                  className="toy-label"
+                  htmlFor="sub-category"
                 >
-                  Taste
+                  sub-category
                 </label>
                 <input
-                  className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                  id="Taste"
+                  className="toy-input"
+                  id="sub-category"
                   type="text"
-                  placeholder="Enter coffee Taste "
-                  name="Taste"
+                  placeholder="Enter sub-category "
+                  name="sub-category"
                 />
               </div>
             </div>
             <div className="flex flex-wrap -mx-3 mb-6">
               <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                 <label
-                  className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                  htmlFor="Category"
+                  className="toy-label"
+                  htmlFor="price"
                 >
-                  Category
+                  price
                 </label>
                 <input
-                  className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                  id="Category"
-                  type="text"
-                  placeholder="Enter Coffee Category"
-                  name="Category"
+                  className="toy-input"
+                  id="price"
+                  type="number"
+                  placeholder="Enter toy price"
+                  name="price"
                 />
               </div>
               <div className="w-full md:w-1/2 px-3">
                 <label
-                  className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                  htmlFor="Details"
+                  className="toy-label"
+                  htmlFor="ratings"
                 >
-                  Details
+                  ratings
                 </label>
                 <input
-                  className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                  id="Details"
-                  type="text"
-                  placeholder="Enter coffee Details "
-                  name="Details"
+                  className="toy-input"
+                  id="ratings"
+                  type="number"
+                  placeholder="Enter ratings "
+                  name="ratings"
+                />
+              </div>
+            </div>
+            <div className="flex flex-wrap -mx-3 mb-6">
+              <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                <label
+                  className="toy-label"
+                  htmlFor="photo"
+                >
+                  photo
+                </label>
+                <input
+                  className="toy-input"
+                  id="photo"
+                  type="url"
+                  placeholder="Enter toy photo"
+                  name="photo"
+                />
+              </div>
+              <div className="w-full md:w-1/2 px-3">
+                <label
+                  className="toy-label"
+                  htmlFor="quantity"
+                >
+                  quantity
+                </label>
+                <input
+                  className="toy-input"
+                  id="quantity"
+                  type="number"
+                  placeholder="Enter quantity "
+                  name="quantity"
                 />
               </div>
             </div>
             <div className="flex flex-wrap -mx-3 mb-6">
               <div className="w-full px-3">
-                <label
-                  className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                  htmlFor="photo-url"
-                >
-                  Photo
-                </label>
-                <input
-                  className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                  id="photo-url"
-                  type="url"
-                  placeholder="Enter photo url"
-                  name="photo"
-                />
+              <textarea className="textarea w-full bg-white/25 min-h-[100px]" placeholder="dercriptino"  />
                 <button
                   type="submit"
                   className="bg-[#D2B48C] w-full py-4 rounded outline outline-black text-xl mt-2"
                 >
-                  Add Coffee
+                  Add Toy
                 </button>
               </div>
             </div>
