@@ -7,6 +7,7 @@ import ProductDetails from "../pages/Details/ProductDetails";
 import AllToys from "../pages/all-toys/AllToys";
 import AddToy from "../pages/AddToy/AddToy";
 import MyToys from "../pages/myToys/MyToys";
+import PrivetRoute from "./PrivetRoute";
 
 const routes = createBrowserRouter([
   {
@@ -16,10 +17,38 @@ const routes = createBrowserRouter([
       { path: "/", element: <Home /> },
       { path: "/login", element: <Login /> },
       { path: "/registration", element: <Registration /> },
-      { path: "/details/:id", element: <ProductDetails /> },
-      { path: "/allToys", element: <AllToys /> },
-      { path: "/addToy", element: <AddToy /> },
-      { path: "/myToys", element: <MyToys /> },
+      {
+        path: "/details/:id",
+        element: (
+          <PrivetRoute>
+            <ProductDetails />
+          </PrivetRoute>
+        ),
+      },
+      {
+        path: "/allToys",
+        element: (
+          <PrivetRoute>
+            <AllToys />
+          </PrivetRoute>
+        ),
+      },
+      {
+        path: "/addToy",
+        element: (
+          <PrivetRoute>
+            <AddToy />
+          </PrivetRoute>
+        ),
+      },
+      {
+        path: "/myToys",
+        element: (
+          <PrivetRoute>
+            <MyToys />
+          </PrivetRoute>
+        ),
+      },
     ],
   },
 ]);
