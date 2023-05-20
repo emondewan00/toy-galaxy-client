@@ -17,8 +17,7 @@ const Registration = () => {
   };
   return (
     <div className="max-w-lg h-[80vh] my-10 mx-auto relative">
-      <div className="w-80 h-80 bg-[#A427DF] absolute rounded-full blur-2xl opacity-80 "></div>
-      <div className="card-body relative z-10 backdrop-blur-2xl bg-white/10 rounded  text-white">
+      <div className="login-card">
         <h1 className="text-3xl text-center font-bold ">Sing Up!</h1>
 
         <form onSubmit={submitHandler} className="space-y-3">
