@@ -13,8 +13,8 @@ const ImgGallery = () => {
     { id: 8, img: "/img-gallary/gallary8.jpg" },
     { id: 9, img: "/img-gallary/gallary9.jpg" },
     { id: 10, img: "/img-gallary/gallary10.jpg" },
-    { id: 11, img: "/img-gallary/gallary11.jpg" },
-    { id: 12, img: "/img-gallary/gallary12.jpg" },
+    // { id: 11, img: "/img-gallary/gallary11.jpg" },
+    // { id: 12, img: "/img-gallary/gallary12.jpg" },
   ];
   return (
     <div className="my-10">

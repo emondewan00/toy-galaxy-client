@@ -5,7 +5,7 @@ import Footer from "../pages/Footer/Footer";
 const Layout = () => {
   // bg-[#01051e]
   return (
-    <div className=" bg-[#01051e]   ">
+    <div className=" bg-[#0b2136]   ">
       <div className="">
         <NavBar />
         <div className="min-h-[80vh] container mx-auto">

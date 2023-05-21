@@ -3,8 +3,10 @@ import img from "../../../assets/cover-img.jpg";
 import Category from "../Category/Category";
 import ImgGallery from "../imgGallery/ImgGallery";
 import Toast from "../../toast/Toast";
+import useFetch from "../../../hooks/useFetch";
 
 const Home = () => {
+  const {data, error}=useFetch("https://dragon-news-server-miremon5222-gmailcom.vercel.app/chefs")
   return (
     <div>
       <div className="grid grid-cols-1 md:grid-cols-2 justify-items-center h-[80vh]  text-white font-serif  items-center  ">
@@ -26,6 +28,7 @@ const Home = () => {
                 className="absolute left-52 text-white btn btn-success"
               />
             </form> */}
+            
           </div>
         </div>
         <div>
