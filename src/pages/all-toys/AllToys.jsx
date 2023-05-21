@@ -4,36 +4,35 @@ import TableRow from "../shareComponent/TableRow";
 
 const AllToys = () => {
   const { data, error } = useFetch("http://localhost:4999/allToys");
+  
   return (
     <div className="overflow-x-auto w-full">
-      <table className=" bg-white/10 text-white w-full">
+      <table className=" table w-full my-10">
         {/* head */}
         <thead>
           <tr>
-            <th>
-              <label>
-                <input type="checkbox" className="checkbox" />
-              </label>
-            </th>
-            <th>Name</th>
-            <th>Job</th>
-            <th>Favorite Color</th>
-            <th></th>
+            <th>Toy Name</th>
+            <th>Seller</th>
+            <th>Sub-category</th>
+            <th>Price</th>
+            <th>Available </th>
+            <th>Details </th>
           </tr>
         </thead>
         <tbody>
-          {data?.map((p) => (
-            <TableRow key={p._id} />
+          {data?.map((product) => (
+            <TableRow key={product._id} product={product} />
           ))}
         </tbody>
         {/* foot */}
         <tfoot>
           <tr>
-            <th></th>
-            <th>Name</th>
-            <th>Job</th>
-            <th>Favorite Color</th>
-            <th></th>
+            <th>Toy Name</th>
+            <th>Seller</th>
+            <th>Sub-category</th>
+            <th>Price</th>
+            <th>Available </th>
+            <th>Details </th>
           </tr>
         </tfoot>
       </table>
