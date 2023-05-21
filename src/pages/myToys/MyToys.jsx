@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
-
 import TableRow from "../shareComponent/TableRow";
-
+import useFetch from "../../hooks/useFetch";
 
 const MyToys = () => {
+  const { data, error } = useFetch("http://localhost:4999/allToys");
   return (
     <div className="overflow-x-auto w-full p-4">
       <table className="table w-full">
@@ -22,7 +22,9 @@ const MyToys = () => {
           </tr>
         </thead>
         <tbody>
-          
+          {data?.map((p) => (
+            <TableRow key={p._id} />
+          ))}
         </tbody>
         {/* foot */}
         <tfoot>
