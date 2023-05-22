@@ -7,6 +7,7 @@ import {
   signOut,
   GoogleAuthProvider,
   signInWithPopup,
+  updateProfile,
 } from "firebase/auth";
 import app from "../firebase/firebase.config";
 
@@ -16,9 +17,26 @@ const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState("");
   const [loading, setLoading] = useState(true);
   const googleProvider = new GoogleAuthProvider();
-  const createUser = (email, password) => {
+  const updateUser = (user, name, photo) => {
+    updateProfile(user, {
+      displayName: name,
+      photoURL: photo,
+    })
+      .then(() => {
+        // Profile updated!
+        // ...
+      })
+      .catch((error) => {
+        console.log(error, "updated");
+      });
+  };
+  const emailAndPass = (email, password, userName, userPhoto) => {
     setLoading(true);
-    return createUserWithEmailAndPassword(auth, email, password);
+    return createUserWithEmailAndPassword(auth, email, password)
+      .then((res) => {
+        updateUser(res.user, userName, userPhoto);
+      })
+      .catch((error) => {});
   };
   const signInWithEmailPass = (email, password) => {
     setLoading(true);
@@ -40,7 +58,7 @@ const AuthProvider = ({ children }) => {
     return () => unSubscrib();
   }, []);
   const authInfo = {
-    createUser,
+    emailAndPass,
     logOut,
     loading,
     currentUser,

@@ -14,7 +14,6 @@ const TableRow = ({ product }) => {
     available_quantity,
     detail_description,
   } = product || {};
-  console.log(seller_email);
   return (
     <tr>
       <td>

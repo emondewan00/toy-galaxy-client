@@ -9,10 +9,10 @@ const Registration = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [photo, setPhoto] = useState("");
-  const { createUser } = useContext(AuthContext);
+  const { emailAndPass } = useContext(AuthContext);
   const submitHandler = (event) => {
     event.preventDefault();
-    createUser(email, password)
+    emailAndPass(email, password, name, photo)
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
   };

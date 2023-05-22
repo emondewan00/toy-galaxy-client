@@ -2,7 +2,6 @@ import React from "react";
 import img from "../../../assets/cover-img.jpg";
 import Category from "../Category/Category";
 import ImgGallery from "../imgGallery/ImgGallery";
-import Toast from "../../toast/Toast";
 import useFetch from "../../../hooks/useFetch";
 
 const Home = () => {

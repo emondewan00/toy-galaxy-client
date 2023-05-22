@@ -1,10 +1,25 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
 import { BsFillBookmarkHeartFill, BsFillCartPlusFill } from "react-icons/bs";
 import img from "../../assets/spider-man.jpg";
 
 const ProductDetails = () => {
   const { id } = useParams();
+  const data = useLoaderData();
+  const {
+    _id,
+    toy_name,
+    image,
+    seller_name,
+    seller_email,
+    sub_category,
+    price,
+    rating,
+    available_quantity,
+    detail_description,
+  } = data || {};
+  const arr = new Array(Math.floor(+rating)).fill(0);
+
   return (
     <div className="text-white">
       <h1 className="text-4xl font-semibold text-center my-4 tracking-wide">
@@ -12,14 +27,27 @@ const ProductDetails = () => {
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2  bg-white/10 shadow-xl md:max-w-5xl mx-auto rounded">
         <figure>
-          <img src={img} alt="Album" className="w-[500px]" />
+          <img
+            src={image}
+            alt="Album"
+            className="w-[500px] h-[500px] object-fill object-center"
+          />
         </figure>
         <div className=" w-4/5 mx-auto py-5  space-y-3">
-          <h2 className="text-3xl font-semibold ">New album is released!</h2>
+          <h2 className="text-3xl font-semibold ">{toy_name}</h2>
           <p className="text-lg text-[#ff630f] font-semibold">
-            $100.00 - <span className="line-through ">$50</span>
+            ${price} - <span className="line-through ">$50</span>
           </p>
-          <p>ratings</p>
+          <div className="rating block">
+            {arr?.map((r, idx) => (
+              <input
+                key={idx}
+                type="radio"
+                name="rating-2"
+                className="mask mask-star-2 bg-orange-400"
+              />
+            ))}
+          </div>
           <input
             type="number"
             name=""
@@ -34,21 +62,18 @@ const ProductDetails = () => {
             </button>
             <button className="my-btn">
               {" "}
-              <BsFillCartPlusFill  className="inline"/> Add to Cart
+              <BsFillCartPlusFill className="inline" /> Add to Cart
             </button>
           </div>
           <h1 className="text-xl">product details</h1>
-          <ul className="list-disc grid grid-cols-1 md:grid-cols-2">
-            <li>saller</li>
-            <li>quntity</li>
-            <li>category</li>
+          <ul className="list-disc grid grid-cols-1 md:grid-cols-2 gap-y-2">
+            <li>{seller_name}</li>
+            <li>{seller_email}</li>
+            <li>{available_quantity} Available</li>
+            <li>{sub_category}</li>
           </ul>
-          <h1 className="text-xl">product description</h1>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est ad
-            inventore corporis at maxime ipsam similique aliquam, tempora omnis
-            hic in dolorem numquam rem modi architecto
-          </p>
+          <h1 className="text-xl capitalize">product description</h1>
+          <p>{detail_description.slice(0, 150)}</p>
         </div>
       </div>
     </div>
