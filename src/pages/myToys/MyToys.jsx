@@ -5,7 +5,6 @@ import MyToysTableRow from "../shareComponent/MyToysTableRow";
 const MyToys = () => {
   const [products, setProducts] = useState([]);
   const { currentUser } = useContext(AuthContext);
-  console.log(currentUser?.email);
   const email = currentUser?.email;
 
   useEffect(() => {
@@ -14,7 +13,6 @@ const MyToys = () => {
       .then((data) => setProducts(data));
   }, [email]);
 
-  console.log(products);
   return (
     <div className="overflow-x-auto w-full p-4">
       <table className="table w-full my-10">

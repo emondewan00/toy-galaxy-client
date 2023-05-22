@@ -2,6 +2,7 @@ import React from "react";
 import { BsPencilSquare } from "react-icons/bs";
 import { FaTrash } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import swal from "sweetalert";
 
 const MyToysTableRow = ({ toys }) => {
   const {
@@ -16,6 +17,22 @@ const MyToysTableRow = ({ toys }) => {
     available_quantity,
     detail_description,
   } = toys || {};
+
+  const deleteHandler = () => {
+    fetch(`http://localhost:4999/myToys/${_id}`,{
+      method:"DELETE"
+    })
+      .then((res) => res.json)
+      .then((data) =>
+        swal({
+          title: "Success!",
+          text: "product deleted successfully!",
+          icon: "success",
+          dangerMode: false,
+        })
+      )
+      .catch((err) => console.log(err));
+  };
   return (
     <tr>
       <td>
@@ -38,15 +55,16 @@ const MyToysTableRow = ({ toys }) => {
       <td>{sub_category}</td>
       <td>${price}</td>
       <td>{available_quantity}</td>
-      {/* <td>{detail_description}</td> */}
       <th>
         <Link to={`/details/${_id}`} className="btn btn-ghost btn-xs">
           details
         </Link>
       </th>
       <th>
-        <FaTrash className="inline cursor-pointer" />
-        <BsPencilSquare className="inline ml-1 cursor-pointer" />
+        <FaTrash className="inline cursor-pointer" onClick={deleteHandler} />
+        <Link to={`/editToy/${_id}`}>
+          <BsPencilSquare className="inline ml-1 cursor-pointer" />
+        </Link>
       </th>
     </tr>
   );

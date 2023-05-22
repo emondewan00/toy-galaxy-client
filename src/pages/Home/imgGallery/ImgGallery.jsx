@@ -13,11 +13,11 @@ const ImgGallery = () => {
     { id: 8, img: "/img-gallary/gallary8.jpg" },
     { id: 9, img: "/img-gallary/gallary9.jpg" },
     { id: 10, img: "/img-gallary/gallary10.jpg" },
-    // { id: 11, img: "/img-gallary/gallary11.jpg" },
-    // { id: 12, img: "/img-gallary/gallary12.jpg" },
+    { id: 11, img: "/img-gallary/img11.jpg" },
+    { id: 12, img: "/img-gallary/img12.jpg" },
   ];
   return (
-    <div className="my-10">
+    <div className="my-20">
       <h1 className="text-3xl text-center my-10 text-white">Image Gallery</h1>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-5xl mx-auto">
         {img.map((i) => (

@@ -8,13 +8,14 @@ import AllToys from "../pages/all-toys/AllToys";
 import AddToy from "../pages/AddToy/AddToy";
 import MyToys from "../pages/myToys/MyToys";
 import PrivetRoute from "./PrivetRoute";
-// import Error from "../pages/err/Error";
+import EditToy from "../pages/editToy/EditToy";
+import Error from "../pages/err/Error.jsx";
 
 const routes = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
-    // errorElement:<Error/>,
+    errorElement:<Error/>,
     children: [
       { path: "/", element: <Home /> },
       { path: "/login", element: <Login /> },
@@ -26,7 +27,8 @@ const routes = createBrowserRouter([
             <ProductDetails />
           </PrivetRoute>
         ),
-        loader:({params})=>fetch(`http://localhost:4999/allToys/${params.id}`)
+        loader: ({ params }) =>
+          fetch(`http://localhost:4999/allToys/${params.id}`),
       },
       {
         path: "/allToys",
@@ -51,6 +53,16 @@ const routes = createBrowserRouter([
             <MyToys />
           </PrivetRoute>
         ),
+      },
+      {
+        path: "/editToy/:id",
+        element: (
+          <PrivetRoute>
+            <EditToy />
+          </PrivetRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:4999/allToys/${params.id}`),
       },
     ],
   },

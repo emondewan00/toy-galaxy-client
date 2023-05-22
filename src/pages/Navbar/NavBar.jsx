@@ -13,7 +13,7 @@ const NavBar = () => {
     logOut();
   };
   return (
-    <div className="  text-white md:bg-white/10 bg-primary md:border-b  shadow-xl">
+    <div className="  text-white md:bg-transparent bg-primary md:border-b  shadow-xl">
       <nav className="p-5 container mx-auto md:flex md:items-center md:justify-between">
         <div className="flex justify-between items-center ">
           <Link

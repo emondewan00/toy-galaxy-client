@@ -1,70 +1,99 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import img from "../../../assets/spider-man.jpg";
 import { Link } from "react-router-dom";
 
 const Category = () => {
-  const [tab, setTab] = useState("spiderMan");
+  const [tab, setTab] = useState("Spider Man");
   const [products, setProducts] = useState([]);
 
-  const content = products?.filter((p) => {
-    if (tab === p?.category) {
-      return true;
-    }
-    return false;
-  });
+  useEffect(() => {
+    fetch(`http://localhost:4999/getToyByQuery?sub_category=${tab}`)
+      .then((res) => res.json())
+      .then((data) => setProducts(data));
+  }, [tab]);
+  const {
+    _id,
+    toy_name,
+    image,
+    seller_name,
+    seller_email,
+    sub_category,
+    price,
+    rating,
+    available_quantity,
+    detail_description,
+  } = products || {};
 
   return (
-    <div className="text-white ">
+    <div className="text-white my-10">
       <h1 className="text-3xl text-center font-bold tracking-wide mb-10">
         Category
       </h1>
       <div className="tabs justify-center">
         <a
           className={`tab tab-lifted  ${
-            tab === "spiderMan" ? "tab-active" : "text-white"
+            tab === "Spider Man" ? "tab-active" : "text-white"
           }`}
-          onClick={() => setTab("spiderMan")}
+          onClick={() => setTab("Spider Man")}
         >
           Spaider Man{" "}
         </a>
         <a
           className={`tab tab-lifted  ${
-            tab === "ironMan" ? "tab-active" : "text-white"
+            tab === "Iron Man" ? "tab-active" : "text-white"
           }`}
-          onClick={() => setTab("ironMan")}
+          onClick={() => setTab("Iron Man")}
         >
           Iron Man
         </a>
         <a
           className={`tab tab-lifted  ${
-            tab === "batMan" ? "tab-active" : "text-white"
+            tab === "Bat Man" ? "tab-active" : "text-white"
           }`}
-          onClick={() => setTab("batMan")}
+          onClick={() => setTab("Bat Man")}
         >
           Bat Man
         </a>
       </div>
 
-      {/* {content?.map((p) => (
-        <div key={p._id} className="card w-96 bg-base-100 shadow-xl">
-          <figure className="px-10 pt-10">
-            <img
-              src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-              alt="Shoes"
-              className="rounded-xl"
-            />
-          </figure>
-          <div className="card-body items-center text-center">
-            <h2 className="card-title">Shoes!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div className="card-actions">
-              <button className="btn btn-primary">Buy Now</button>
+      <div className="grid grid-cols-1 md:grid-cols-4 my-10  gap-8 px-10">
+        {products?.map((p) => {
+          const name =
+            p.toy_name.length > 25
+              ? p.toy_name.slice(0, 24) + "..."
+              : p.toy_name;
+          return (
+            <div
+              key={p._id}
+              className="card w-80 h-80 px-8 py-4 ml-10 bg-white/5 border-2 shadow-2xl"
+            >
+              <figure className="">
+                <img src={p.image} alt="Shoes" className="rounded-xl w-36" />
+              </figure>
+              <div className="mt-4 space-y-2 items-center text-center">
+                <h2 className="card-title tracking-wide">{name}</h2>
+                <div className="flex justify-between">
+                  <p className="text-yellow-500 text-lg font-semibold">
+                    ${p.price}
+                  </p>
+                  <p>{p.seller_name}</p>
+                </div>
+                <div className="card-actions justify-between items-center">
+                  <p>{p.rating} ratings</p>
+                  <Link
+                    to={`/details/${p._id}`}
+                    className="px-4 py-2 rounded-sm text-white hover:bg-[#ff4b0f] bg-[#ff630f] outline-none"
+                  >
+                    Details
+                  </Link>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-      ))} */}
+          );
+        })}
+      </div>
 
-      <div className="card w-80 h-80 px-8 py-4 ml-10 bg-white/5 border-2 shadow-2xl">
+      {/* <div className="card w-80 h-80 px-8 py-4 ml-10 bg-white/5 border-2 shadow-2xl">
         <figure className="">
           <img src={img} alt="Shoes" className="rounded-xl w-36" />
         </figure>
@@ -76,10 +105,15 @@ const Category = () => {
           </div>
           <div className="card-actions justify-between items-center">
             <p>5 ratings</p>
-            <Link to="/details/1" className="px-4 py-2 rounded-sm text-white hover:bg-[#ff4b0f] bg-[#ff630f] outline-none">Details</Link>
+            <Link
+              to="/details/1"
+              className="px-4 py-2 rounded-sm text-white hover:bg-[#ff4b0f] bg-[#ff630f] outline-none"
+            >
+              Details
+            </Link>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
