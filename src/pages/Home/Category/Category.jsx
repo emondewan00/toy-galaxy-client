@@ -7,7 +7,7 @@ const Category = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:4999/getToyByQuery?sub_category=${tab}`)
+    fetch(`http://localhost:4999/getByCategory?sub_category=${tab}`)
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, [tab]);
@@ -82,6 +82,7 @@ const Category = () => {
                   <p>{p.rating} ratings</p>
                   <Link
                     to={`/details/${p._id}`}
+                    state={p.toy_name}
                     className="px-4 py-2 rounded-sm text-white hover:bg-[#ff4b0f] bg-[#ff630f] outline-none"
                   >
                     Details

@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import TableRow from "../shareComponent/TableRow";
+import WebTitle from "../../webTitle/WebTitle";
 
 const AllToys = () => {
   const [url, setUrl] = useState("allToys");
   const [searchText, setSearchText] = useState("");
   const [products, setProducts] = useState([]);
+  const [page, setPage] = useState(0);
 
   useEffect(() => {
     fetch(`http://localhost:4999/${url}`)
@@ -14,9 +16,10 @@ const AllToys = () => {
 
   const queryHandler = (event) => {
     event.preventDefault();
-    setUrl(`getToyByQuery?toy_name=${searchText}`);
+    setUrl(`allToys?toy_name=${searchText}`);
   };
-
+  console.log(products)
+  WebTitle()
   return (
     <div>
       <form onSubmit={queryHandler} className="">

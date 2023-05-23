@@ -4,22 +4,22 @@ const CustomerReview = () => {
   const review = [
     {
       id: 1,
-      name: "Karen L.",
-      img: "/person1.jpg",
+      name: "Spider man",
+      img: "/img-gallary/gallary2.jpg",
       review:
         "The meal prepared by the chef was exquisite! Every dish was carefully crafted and full of flavor. The chef was also incredibly professional and attentive to our needs throughout the entire dining experience.",
     },
     {
       id: 2,
-      name: "John M.",
-      img: "/person2.jpg",
+      name: "Iron Man",
+      img: "/img-gallary/gallary3.jpg",
       review:
         "I was blown away by the personal chef services provided by this chef. Not only was the food amazing, but the entire process was seamless and stress-free. I would highly recommend this chef for any special occasion or event.",
     },
     {
       id: 3,
-      name: " Emily T.",
-      img: "/person3.jpg",
+      name: " Batman",
+      img: "/img-gallary/gallary5.jpg",
       review:
         "I have a lot of dietary restrictions and was worried about finding a chef who could accommodate my needs. This chef went above and beyond to create a menu that was not only delicious but also met all of my dietary requirements.",
     },
@@ -36,7 +36,7 @@ const CustomerReview = () => {
           >
             <div className="avatar left-24">
               <div className="w-24  rounded-full">
-                <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg"  />
+                <img src={r.img} />
               </div>
             </div>
             <div className="text-center">

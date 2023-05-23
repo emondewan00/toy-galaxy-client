@@ -1,8 +1,10 @@
 import React from "react";
 import { Link, useRouteError } from "react-router-dom";
+import WebTitle from "../../webTitle/WebTitle";
 
 const Error = () => {
   const error = useRouteError();
+  WebTitle()
   return (
     <main className="h-screen w-full flex flex-col justify-center items-center bg-[#1A2238]">
         <p className="text-white text-3xl">

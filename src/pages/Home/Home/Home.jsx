@@ -4,8 +4,10 @@ import Category from "../Category/Category";
 import ImgGallery from "../imgGallery/ImgGallery";
 import CustomerReview from "../Review/CustomerReview";
 import Stat from "../Stat/Stat";
+import WebTitle from "../../../webTitle/WebTitle";
 
 const Home = () => {
+  WebTitle()
   return (
     <div>
       <div className="grid grid-cols-1 md:grid-cols-2 justify-items-center h-[80vh]  text-white font-serif  items-center  ">

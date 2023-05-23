@@ -4,6 +4,8 @@ import { FaFacebook, FaGoogle, FaLinkedin } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import GoogleLog from "../shareComponent/GoogleLog";
+import swal from "sweetalert";
+import WebTitle from "../../webTitle/WebTitle";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -18,6 +20,12 @@ const Login = () => {
     event.preventDefault();
     signInWithEmailPass(email, password)
       .then((res) => {
+        swal({
+          title:"Success!",
+          text: "Login successfully!",
+          icon: "success",
+          dangerMode: false,
+        });
         navigate(from);
       })
       .catch((err) => console.log(err));
@@ -25,7 +33,7 @@ const Login = () => {
   const forgotPass = (e) => {
     console.log(emailRaf.current.value);
   };
-  
+  WebTitle()
   return (
     <div className="max-w-md h-[80vh] my-10 mx-auto  relative">
       <div className="w-80 h-80 bg-[#A427DF] absolute rounded-full -top-10 -left-10 "></div>
@@ -45,7 +53,7 @@ const Login = () => {
           <div className="form-control">
             <label className="toy-label ">Password</label>
             <input
-              type="text"
+              type="password"
               placeholder="password"
               className="toy-input"
               onChange={(e) => setPassword(e.target.value)}

@@ -39,7 +39,7 @@ const TableRow = ({ product }) => {
       <td>${price}</td>
       <td>{available_quantity}</td>
       <th>
-        <Link to={`/details/${_id}`} className="btn btn-ghost btn-xs">details</Link>
+        <Link to={`/details/${_id}`} state={toy_name} className="btn btn-ghost btn-xs">details</Link>
       </th>
     </tr>
   );

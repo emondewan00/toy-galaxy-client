@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import swal from "sweetalert";
 import { AuthContext } from "../../Provider/AuthProvider";
+import WebTitle from "../../webTitle/WebTitle";
 
 const AddToy = () => {
   const {
@@ -31,7 +32,7 @@ const AddToy = () => {
       .catch((err) => console.log(err));
   };
   console.log(currentUser.displayName)
-
+  WebTitle()
   return (
     <div className="w-5/6 bg-white/5 md:rounded-tr-[200px] md:rounded-tl-3xl md:rounded-br-2xl md:rounded-bl-[200px] m-auto md:h-[92vh]  my-10 p-3 md:p-0 outline text-white ">
       <div className="relative">

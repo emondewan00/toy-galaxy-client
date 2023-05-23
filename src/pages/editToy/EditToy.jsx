@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useLoaderData } from "react-router-dom";
 import swal from "sweetalert";
+import WebTitle from "../../webTitle/WebTitle";
 
 const EditToy = () => {
   const {
@@ -24,6 +25,7 @@ const EditToy = () => {
     detail_description,
   } = product || {};
   console.log(product)
+  WebTitle()
   const onSubmit = (data) => {
     fetch(`http://localhost:4999/allToys/${_id}`, {
       method: "PUT",

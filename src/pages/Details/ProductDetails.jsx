@@ -2,6 +2,7 @@ import React from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import { BsFillBookmarkHeartFill, BsFillCartPlusFill } from "react-icons/bs";
 import img from "../../assets/spider-man.jpg";
+import WebTitle from "../../webTitle/WebTitle";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -19,7 +20,7 @@ const ProductDetails = () => {
     detail_description,
   } = data || {};
   const arr = new Array(Math.floor(+rating)).fill(0);
-
+  WebTitle()
   return (
     <div className="text-white">
       <h1 className="text-4xl font-semibold text-center my-4 tracking-wide">

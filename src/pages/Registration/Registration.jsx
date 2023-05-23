@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import GoogleLog from "../shareComponent/GoogleLog";
 import swal from "sweetalert";
+import WebTitle from "../../webTitle/WebTitle";
 
 const Registration = () => {
   const [name, setName] = useState("");
@@ -25,6 +26,7 @@ const Registration = () => {
       })
       .catch((err) => console.log(err));
   };
+  WebTitle();
   return (
     <div className="max-w-lg h-[80vh] my-10 mx-auto relative">
       <div className="w-80 h-80 bg-[#A427DF] absolute rounded-full blur-2xl opacity-80 "></div>

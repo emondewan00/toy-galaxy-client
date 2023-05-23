@@ -19,19 +19,22 @@ const MyToysTableRow = ({ toys }) => {
   } = toys || {};
 
   const deleteHandler = () => {
-    fetch(`http://localhost:4999/myToys/${_id}`,{
-      method:"DELETE"
-    })
-      .then((res) => res.json)
-      .then((data) =>
-        swal({
-          title: "Success!",
-          text: "product deleted successfully!",
-          icon: "success",
-          dangerMode: false,
-        })
-      )
-      .catch((err) => console.log(err));
+    const proceed = confirm("Are you confirm to delete");
+    if (proceed) {
+      fetch(`http://localhost:4999/myToys/${_id}`, {
+        method: "DELETE",
+      })
+        .then((res) => res.json)
+        .then((data) =>
+          swal({
+            title: "Success!",
+            text: "product deleted successfully!",
+            icon: "success",
+            dangerMode: false,
+          })
+        )
+        .catch((err) => console.log(err));
+    }
   };
   return (
     <tr>
@@ -62,7 +65,7 @@ const MyToysTableRow = ({ toys }) => {
       </th>
       <th>
         <FaTrash className="inline cursor-pointer" onClick={deleteHandler} />
-        <Link to={`/editToy/${_id}`}>
+        <Link to={`/editToy/${_id}`} state={toy_name} >
           <BsPencilSquare className="inline ml-1 cursor-pointer" />
         </Link>
       </th>

@@ -20,7 +20,7 @@ const Stat = () => {
               ></path>
             </svg>
           </div>
-          <div className="stat-title">Downloads</div>
+          <div className="stat-title">Buy</div>
           <div className="stat-value">31K</div>
           <div className="stat-desc">Jan 1st - Feb 1st</div>
         </div>
