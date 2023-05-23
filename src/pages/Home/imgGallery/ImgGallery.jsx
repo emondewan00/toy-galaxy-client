@@ -18,7 +18,7 @@ const ImgGallery = () => {
   ];
   return (
     <div className="my-20">
-      <h1 className="text-3xl text-center my-10 text-white">Image Gallery</h1>
+      <h1 className="text-6xl text-center my-8 text-white">Image Gallery</h1>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-5xl mx-auto">
         {img.map((i) => (
           <Img key={i.id} img={i} />

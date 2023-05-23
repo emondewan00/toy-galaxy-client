@@ -26,7 +26,7 @@ const Category = () => {
 
   return (
     <div className="text-white my-10">
-      <h1 className="text-3xl text-center font-bold tracking-wide mb-10">
+      <h1 className="text-6xl text-center my-8 text-white mb-10">
         Category
       </h1>
       <div className="tabs justify-center">

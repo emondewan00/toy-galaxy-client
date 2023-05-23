@@ -3,6 +3,7 @@ import img from "../../../assets/cover-img.jpg";
 import Category from "../Category/Category";
 import ImgGallery from "../imgGallery/ImgGallery";
 import CustomerReview from "../Review/CustomerReview";
+import Stat from "../Stat/Stat";
 
 const Home = () => {
   return (
@@ -39,6 +40,7 @@ const Home = () => {
       <Category />
       <ImgGallery />
       <CustomerReview />
+      <Stat />
     </div>
   );
 };

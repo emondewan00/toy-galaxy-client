@@ -13,6 +13,13 @@ const MyToys = () => {
       .then((data) => setProducts(data));
   }, [email]);
 
+  let content = null;
+  if (products.length > 0) {
+    content = products?.map((p) => <MyToysTableRow key={p._id} toys={p} />);
+  }else{
+    content=<h1 className="text-4xl font-bold my-10 text-white text-center">Products not found</h1>
+  }
+
   return (
     <div className="overflow-x-auto w-full p-4">
       <table className="table w-full my-10">
@@ -29,9 +36,7 @@ const MyToys = () => {
           </tr>
         </thead>
         <tbody>
-          {products?.map((p) => (
-            <MyToysTableRow key={p._id} toys={p} />
-          ))}
+          {content}
         </tbody>
         {/* foot */}
         <tfoot>

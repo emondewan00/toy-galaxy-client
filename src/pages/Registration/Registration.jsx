@@ -3,6 +3,7 @@ import { FaGoogle, FaFacebook, FaLinkedin } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import GoogleLog from "../shareComponent/GoogleLog";
+import swal from "sweetalert";
 
 const Registration = () => {
   const [name, setName] = useState("");
@@ -13,7 +14,15 @@ const Registration = () => {
   const submitHandler = (event) => {
     event.preventDefault();
     emailAndPass(email, password, name, photo)
-      .then((res) => console.log(res))
+      .then((res) => {
+        swal({
+          title: "Success!",
+          text: "Registration successfully!",
+          icon: "success",
+          dangerMode: false,
+        });
+        console.log(res);
+      })
       .catch((err) => console.log(err));
   };
   return (

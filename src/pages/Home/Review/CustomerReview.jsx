@@ -24,13 +24,21 @@ const CustomerReview = () => {
         "I have a lot of dietary restrictions and was worried about finding a chef who could accommodate my needs. This chef went above and beyond to create a menu that was not only delicious but also met all of my dietary requirements.",
     },
   ];
+
   return (
     <div className="container mx-auto my-24 ">
       <h1 className="text-6xl text-center my-8 text-white">Customer Review</h1>
       <div className="flex flex-col md:flex-row justify-center items-center gap-x-8 ">
         {review.map((r) => (
-          <div key={r.id} className=" w-80 md:w-[350px]  card-hover my-4 md:my-0 bg-gray-200 rounded p-4">
-            <img src={r.img} className="mx-auto rounded-full mb-7" height={"30px"} alt="" />
+          <div
+            key={r.id}
+            className=" w-80 md:w-[350px]  card-hover my-4 md:my-0 bg-gray-200 rounded p-4"
+          >
+            <div className="avatar left-24">
+              <div className="w-24  rounded-full">
+                <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg"  />
+              </div>
+            </div>
             <div className="text-center">
               <q>{r.review}</q>
               <h1 className="text-2xl text-purple-400 ">{r.name}</h1>
