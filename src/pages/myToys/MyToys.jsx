@@ -9,7 +9,7 @@ const MyToys = () => {
   const email = currentUser?.email;
 
   useEffect(() => {
-    fetch(`http://localhost:4999/myToys?seller_email=${email}`)
+    fetch(`https://baby-toy-server-miremon5222-gmailcom.vercel.app/myToys?seller_email=${email}`)
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, [email]);

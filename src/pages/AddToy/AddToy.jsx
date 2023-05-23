@@ -13,7 +13,7 @@ const AddToy = () => {
   } = useForm();
   const {currentUser}=useContext(AuthContext)
   const onSubmit = (data) => {
-    fetch("http://localhost:4999/allToys", {
+    fetch("https://baby-toy-server-miremon5222-gmailcom.vercel.app/allToys", {
       method: "POST",
       headers: {
         "content-type": "application/json",

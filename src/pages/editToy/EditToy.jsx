@@ -27,7 +27,7 @@ const EditToy = () => {
   console.log(product)
   WebTitle()
   const onSubmit = (data) => {
-    fetch(`http://localhost:4999/allToys/${_id}`, {
+    fetch(`https://baby-toy-server-miremon5222-gmailcom.vercel.app/allToys/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

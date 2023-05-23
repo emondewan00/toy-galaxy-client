@@ -21,7 +21,7 @@ const MyToysTableRow = ({ toys }) => {
   const deleteHandler = () => {
     const proceed = confirm("Are you confirm to delete");
     if (proceed) {
-      fetch(`http://localhost:4999/myToys/${_id}`, {
+      fetch(`https://baby-toy-server-miremon5222-gmailcom.vercel.app/myToys/${_id}`, {
         method: "DELETE",
       })
         .then((res) => res.json)

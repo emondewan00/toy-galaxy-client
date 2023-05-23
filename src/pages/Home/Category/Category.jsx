@@ -7,7 +7,7 @@ const Category = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:4999/getByCategory?sub_category=${tab}`)
+    fetch(`https://baby-toy-server-miremon5222-gmailcom.vercel.app/getByCategory?sub_category=${tab}`)
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, [tab]);
@@ -79,7 +79,7 @@ const Category = () => {
                   <p>{p.seller_name}</p>
                 </div>
                 <div className="card-actions justify-between items-center">
-                  <p>{p.rating} ratings</p>
+                  <p>{p.rating} ratings </p>
                   <Link
                     to={`/details/${p._id}`}
                     state={p.toy_name}

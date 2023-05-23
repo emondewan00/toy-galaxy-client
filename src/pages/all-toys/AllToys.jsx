@@ -9,7 +9,7 @@ const AllToys = () => {
   const [page, setPage] = useState(0);
 
   useEffect(() => {
-    fetch(`http://localhost:4999/${url}`)
+    fetch(`https://baby-toy-server-miremon5222-gmailcom.vercel.app/${url}`)
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, [url]);

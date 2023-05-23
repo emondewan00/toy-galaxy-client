@@ -28,7 +28,7 @@ const routes = createBrowserRouter([
           </PrivetRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:4999/allToys/${params.id}`),
+          fetch(`https://baby-toy-server-miremon5222-gmailcom.vercel.app/allToys/${params.id}`),
       },
       {
         path: "/allToys",
@@ -62,7 +62,7 @@ const routes = createBrowserRouter([
           </PrivetRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:4999/allToys/${params.id}`),
+          fetch(`https://baby-toy-server-miremon5222-gmailcom.vercel.app/allToys/${params.id}`),
       },
     ],
   },
