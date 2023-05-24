@@ -28,7 +28,7 @@ const Registration = () => {
   };
   WebTitle();
   return (
-    <div className="max-w-lg h-[80vh] my-10 mx-auto relative">
+    <div className="max-w-lg h-[80vh] my-10 px-4 md:px-0 mx-auto relative">
       <div className="w-80 h-80 bg-[#A427DF] absolute rounded-full blur-2xl opacity-80 "></div>
       <div className="login-card">
         <h1 className="text-3xl text-center font-bold ">Sing Up!</h1>

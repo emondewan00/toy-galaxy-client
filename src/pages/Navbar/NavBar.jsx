@@ -32,7 +32,7 @@ const NavBar = () => {
         </div>
         <ul
           className={`md:flex md:items-center bg-primary md:bg-transparent overflow-hidden z-40 md:z-auto absolute md:sticky  w-full left-0  md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100   transition-all ease-in duration-500 gap-2 ${
-            nav ? "top-[80px]" : "top-[-400px]"
+            nav ? "top-[70px]" : "top-[-400px]"
           }`}
         >
           <li className="me-2">
@@ -64,17 +64,16 @@ const NavBar = () => {
                 </div>
               </li>
               <li className="me-2">
-                <button
-                  onClick={logOutHandler}
-                  className="my-btn"
-                >
+                <button onClick={logOutHandler} className="my-btn">
                   Logout
                 </button>
               </li>
             </>
           ) : (
-            <li className="me-2 my-btn">
-              <Link to="/login" >Login</Link>
+            <li className="me-2 ">
+              <button className="my-btn">
+                <Link to="/login">Login</Link>
+              </button>
             </li>
           )}
         </ul>

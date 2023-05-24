@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const TableRow = ({ product }) => {
+const TableRow = ({ product,idx }) => {
   const {
     _id,
     toy_name,
@@ -16,6 +16,7 @@ const TableRow = ({ product }) => {
   } = product || {};
   return (
     <tr>
+      <th>{idx}</th>
       <td>
         <div className="flex items-center space-x-3">
           <div className="avatar">

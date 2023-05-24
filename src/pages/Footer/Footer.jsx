@@ -5,11 +5,7 @@ const Footer = () => {
     <div className=" border-t text-neutral-content">
       <footer className="footer p-10 container mx-auto">
         <div>
-          <span className="footer-title">Services</span>
-          <a className="link link-hover">Branding</a>
-          <a className="link link-hover">Design</a>
-          <a className="link link-hover">Marketing</a>
-          <a className="link link-hover">Advertisement</a>
+          <h1 className="text-3xl">Toy Galxay</h1>
         </div>
         <div>
           <span className="footer-title">Company</span>

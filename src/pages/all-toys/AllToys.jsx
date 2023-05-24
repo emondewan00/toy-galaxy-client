@@ -23,8 +23,8 @@ const AllToys = () => {
   return (
     <div>
       <form onSubmit={queryHandler} className="">
-        <div className="form-control mt-4 max-w-md mx-auto">
-          <div className="input-group">
+        <div className="form-control mt-4  ">
+          <div className="input-group justify-center">
             <input
               type="text"
               placeholder="Search by name "
@@ -50,11 +50,12 @@ const AllToys = () => {
           </div>
         </div>
       </form>
-      <div className="overflow-x-auto w-full">
+      <div className="overflow-x-auto mx-2 md:mx-0 w-full">
         <table className=" table w-full my-10">
           {/* head */}
           <thead>
             <tr>
+              <th></th>
               <th>Toy Name</th>
               <th>Seller</th>
               <th>Sub-category</th>
@@ -64,13 +65,14 @@ const AllToys = () => {
             </tr>
           </thead>
           <tbody>
-            {products?.map((product) => (
-              <TableRow key={product._id} product={product} />
+            {products?.map((product,idx) => (
+              <TableRow key={product._id} product={product} idx={idx} />
             ))}
           </tbody>
           {/* foot */}
           <tfoot>
             <tr>
+              <th></th>
               <th>Toy Name</th>
               <th>Seller</th>
               <th>Sub-category</th>

@@ -3,6 +3,8 @@ import { useLoaderData, useParams } from "react-router-dom";
 import { BsFillBookmarkHeartFill, BsFillCartPlusFill } from "react-icons/bs";
 import img from "../../assets/spider-man.jpg";
 import WebTitle from "../../webTitle/WebTitle";
+import Rating from "react-rating";
+import { FaRegStar, FaStar } from "react-icons/fa";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -19,10 +21,9 @@ const ProductDetails = () => {
     available_quantity,
     detail_description,
   } = data || {};
-  const arr = new Array(Math.floor(+rating)).fill(0);
-  WebTitle()
+  WebTitle();
   return (
-    <div className="text-white">
+    <div className="text-white m-4 md:m-0 ">
       <h1 className="text-4xl font-semibold text-center my-4 tracking-wide">
         Product Details
       </h1>
@@ -40,14 +41,17 @@ const ProductDetails = () => {
             ${price} - <span className="line-through ">$50</span>
           </p>
           <div className="rating block">
-            {arr?.map((r, idx) => (
-              <input
-                key={idx}
-                type="radio"
-                name="rating-2"
-                className="mask mask-star-2 bg-orange-400"
+            <p>
+              <Rating
+                readonly
+                placeholderRating={rating}
+                emptySymbol={<FaRegStar/>}
+                placeholderSymbol={<FaStar className="text-yellow-400" />}
+                fullSymbol={<FaStar />}
               />
-            ))}
+              {"  "}
+              {rating}
+            </p>
           </div>
           <input
             type="number"

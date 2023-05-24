@@ -17,9 +17,9 @@ const ImgGallery = () => {
     { id: 12, img: "/img-gallary/img12.jpg" },
   ];
   return (
-    <div className="my-20">
+    <div className="my-20" data-aos="zoom-in">
       <h1 className="text-6xl text-center my-8 text-white">Image Gallery</h1>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-5xl mx-auto">
+      <div className="grid grid-cols-2 md:grid-cols-4 px-4 md:0 gap-3 max-w-5xl mx-auto">
         {img.map((i) => (
           <Img key={i.id} img={i} />
         ))}

@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from "react";
 import img from "../../../assets/spider-man.jpg";
 import { Link } from "react-router-dom";
+import Rating from "react-rating";
+import { FaRegStar, FaStar } from "react-icons/fa";
 
 const Category = () => {
   const [tab, setTab] = useState("Spider Man");
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch(`https://baby-toy-server-miremon5222-gmailcom.vercel.app/getByCategory?sub_category=${tab}`)
+    fetch(
+      `https://baby-toy-server-miremon5222-gmailcom.vercel.app/getByCategory?sub_category=${tab}`
+    )
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, [tab]);
@@ -26,9 +30,7 @@ const Category = () => {
 
   return (
     <div className="text-white my-10">
-      <h1 className="text-6xl text-center my-8 text-white mb-10">
-        Category
-      </h1>
+      <h1 className="text-6xl text-center my-8 text-white mb-10">Category</h1>
       <div className="tabs justify-center">
         <a
           className={`tab tab-lifted  ${
@@ -56,7 +58,7 @@ const Category = () => {
         </a>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-4 my-10  gap-8 px-10">
+      <div className="grid grid-cols-1 justify-items-center md:grid-cols-4 my-10 gap-y-4 md:gap-8 md:px-10" data-aos="zoom-in-up">
         {products?.map((p) => {
           const name =
             p.toy_name.length > 25
@@ -65,7 +67,8 @@ const Category = () => {
           return (
             <div
               key={p._id}
-              className="card w-80 h-80 px-8 py-4 ml-10 bg-white/5 border-2 shadow-2xl"
+              className="card max-w-xs px-2 h-80 md:px-8 py-4  bg-white/5 border-2 shadow-2xl"
+              data-aos="zoom-in-up"
             >
               <figure className="">
                 <img src={p.image} alt="Shoes" className="rounded-xl w-36" />
@@ -79,7 +82,16 @@ const Category = () => {
                   <p>{p.seller_name}</p>
                 </div>
                 <div className="card-actions justify-between items-center">
-                  <p>{p.rating} ratings </p>
+                  <p>
+                    <Rating
+                      readonly
+                      placeholderRating={p.rating}
+                      emptySymbol={<FaRegStar />}
+                      placeholderSymbol={<FaStar className="text-yellow-400" />}
+                      fullSymbol={<FaStar />}
+                    />{"  "}
+                    {p.rating}
+                  </p>
                   <Link
                     to={`/details/${p._id}`}
                     state={p.toy_name}

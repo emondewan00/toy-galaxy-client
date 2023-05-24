@@ -35,7 +35,7 @@ const Login = () => {
   };
   WebTitle()
   return (
-    <div className="max-w-md h-[80vh] my-10 mx-auto  relative">
+    <div className="max-w-md h-[80vh] my-10 mx-auto px-4 md:px-0 relative">
       <div className="w-80 h-80 bg-[#A427DF] absolute rounded-full -top-10 -left-10 "></div>
       <div className="login-card">
         <h1 className="text-3xl text-center font-bold">Login!</h1>

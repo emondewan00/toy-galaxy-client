@@ -4,7 +4,7 @@ import { FaTrash } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import swal from "sweetalert";
 
-const MyToysTableRow = ({ toys }) => {
+const MyToysTableRow = ({ toys,idx }) => {
   const {
     _id,
     toy_name,
@@ -38,6 +38,7 @@ const MyToysTableRow = ({ toys }) => {
   };
   return (
     <tr>
+      <th>{idx}</th>
       <td>
         <div className="flex items-center space-x-3">
           <div className="avatar">
